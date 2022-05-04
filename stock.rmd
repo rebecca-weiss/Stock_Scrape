@@ -1,0 +1,45 @@
+---
+title: "Stock"
+author: "Rebecca Weiss"
+date: "5/3/2022"
+output: html
+---
+***
+
+```{r setup, warning=FALSE, message=FALSE}
+#load all necessary libraries
+library(tidyverse)
+library(rvest)
+```
+
+Clear the workspace:
+```{r}
+rm(list = ls())
+```
+
+
+## Scrape data from yahoo finance for stocks (1 year)
+Function to scrape 1 year of historical data from Yahoo Finance
+```{r}
+scrapestock <- function(url){
+  df <- url %>% 
+  # read the HTML from the webpage
+  read_html() %>%
+  # get data table from copied xpath for historical data
+  html_nodes(xpath = ('//*[@id="Col1-1-HistoricalDataTable-Proxy"]/section')) %>% 
+  html_table()
+}
+```
+
+Use function to get data from Apple, Tesla, Amazon, and Netflix
+```{r}
+tsla <- scrapestock('https://finance.yahoo.com/quote/TSLA/history?p=TSLA')
+aapl <- scrapestock('https://finance.yahoo.com/quote/AAPL/history?p=AAPL')
+nflx <- scrapestock('https://finance.yahoo.com/quote/NFLX/history?p=NFLX')
+amzn <- scrapestock('https://finance.yahoo.com/quote/AMZN/history?p=AMZN')
+
+```
+
+
+
+
