@@ -2,7 +2,7 @@
 title: "Stock"
 author: "Rebecca Weiss"
 date: "5/3/2022"
-output: html
+output: html_document
 ---
 ***
 
