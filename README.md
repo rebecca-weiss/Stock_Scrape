@@ -1,4 +1,5 @@
 # Stock Scrape
+#### Author: Rebecca Weiss
 
 ## Purpose
 R package to scrape / clean historical stock prices
