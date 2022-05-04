@@ -1,7 +1,7 @@
 # Stock Scrape
 
 ## Purpose
-R package to scrape, and clean historical stock data in R
+R package to scrape / clean historical stock prices
 
 ## Usage
 To scrape data, use `scrapestock` function with the url to historical data. 
